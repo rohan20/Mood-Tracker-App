@@ -8,7 +8,7 @@
     tools:context="com.example.rohantaneja.moodtracker.MainActivity">
 
     <ImageView
-        android:src="@drawable/smiley-happy"
+        android:src="@drawable/smiley_happy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
