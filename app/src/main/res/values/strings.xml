@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mood Tracker</string>
+    <string name="add_note">Add note</string>
 </resources>
