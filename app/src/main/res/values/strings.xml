@@ -2,4 +2,5 @@
     <string name="app_name">Mood Tracker</string>
     <string name="add_note">Add note</string>
     <string name="view_mood_history">View mood history</string>
+    <string name="add_mood_message">Add mood message</string>
 </resources>

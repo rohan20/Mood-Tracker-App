@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     ImageButton ibMoodMessage;
     ImageButton ibMoodHistory;
@@ -33,5 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addMoodMessage() {
+        showToast(getString(R.string.add_mood_message));
+        //create alert for adding message
     }
 }
