@@ -26,4 +26,8 @@ public class MoodFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_mood, container, false);
     }
 
+    public static MoodFragment newInstance(int moodImageResId, int moodBackgroundId){
+
+    }
+
 }
