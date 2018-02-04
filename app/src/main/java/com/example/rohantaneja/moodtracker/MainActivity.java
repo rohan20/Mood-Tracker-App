@@ -17,6 +17,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         ibMoodMessage = findViewById(R.id.ib_mood_message);
         ibMoodHistory = findViewById(R.id.ib_mood_history);
+
+        ibMoodMessage.setOnClickListener(this);
     }
 
     @Override
