@@ -2,10 +2,12 @@ package com.example.rohantaneja.moodtracker;
 
 
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 /**
@@ -22,8 +24,15 @@ public class MoodFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mood, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_mood, container, false);
+
+        ImageView moodImageView = v.findViewById(R.id.iv_mood);
+        moodImageView.setImageResource(getArguments().getInt("image"));
+        ConstraintLayout constraintLayout = v.findViewById(R.id.cl_parent);
+        constraintLayout.setBackgroundColor(getArguments().getInt("background"));
+
+        return v;
     }
 
     public static MoodFragment newInstance(int moodImageResId, int moodBackgroundId) {
