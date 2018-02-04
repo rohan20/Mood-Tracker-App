@@ -26,8 +26,13 @@ public class MoodFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_mood, container, false);
     }
 
-    public static MoodFragment newInstance(int moodImageResId, int moodBackgroundId){
-
+    public static MoodFragment newInstance(int moodImageResId, int moodBackgroundId) {
+        MoodFragment moodFragment = new MoodFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("image", moodImageResId);
+        bundle.putInt("background", moodBackgroundId);
+        moodFragment.setArguments(bundle);
+        return moodFragment;
     }
 
 }
