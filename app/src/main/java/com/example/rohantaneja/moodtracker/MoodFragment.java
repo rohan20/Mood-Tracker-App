@@ -30,7 +30,7 @@ public class MoodFragment extends Fragment {
         ImageView moodImageView = v.findViewById(R.id.iv_mood);
         moodImageView.setImageResource(getArguments().getInt("image"));
         ConstraintLayout constraintLayout = v.findViewById(R.id.cl_parent);
-        constraintLayout.setBackgroundColor(getArguments().getInt("background"));
+        constraintLayout.setBackgroundResource(getArguments().getInt("background"));
 
         return v;
     }
