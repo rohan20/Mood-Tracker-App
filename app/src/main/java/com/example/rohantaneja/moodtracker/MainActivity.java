@@ -1,5 +1,6 @@
 package com.example.rohantaneja.moodtracker;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     ImageButton ibMoodMessage;
     ImageButton ibMoodHistory;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         ibMoodMessage = findViewById(R.id.ib_mood_message);
         ibMoodHistory = findViewById(R.id.ib_mood_history);
+        viewPager = findViewById(R.id.viewpager_mood);
 
         ibMoodMessage.setOnClickListener(this);
     }
