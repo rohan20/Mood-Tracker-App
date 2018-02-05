@@ -1,6 +1,7 @@
 package com.example.rohantaneja.moodtracker;
 
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,5 +45,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void addMoodMessage() {
         showToast(getString(R.string.add_mood_message));
         //create alert for adding message
+        showAlertToAddMessage();
+    }
+
+    private void showAlertToAddMessage() {
+
+        //create custom layout with editText for mood message
+        //postiive button = Set Mood
+        //negative button = Cancel
+        //if empty mood message, proceed with empty message
+
     }
 }
