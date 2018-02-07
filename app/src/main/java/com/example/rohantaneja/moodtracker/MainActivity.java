@@ -1,5 +1,6 @@
 package com.example.rohantaneja.moodtracker;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         viewPager.setCurrentItem(3);
 
         ibMoodMessage.setOnClickListener(this);
+        ibMoodHistory.setOnClickListener(this);
     }
 
     @Override
@@ -37,9 +39,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
 
             case R.id.ib_mood_history:
-
+                viewMoodHistory();
                 break;
         }
+    }
+
+    private void viewMoodHistory() {
+        Intent i = new Intent(this, MoodHistoryActivity.class);
+        startActivity(i);
     }
 
     private void addMoodMessage() {
@@ -51,7 +58,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void showAlertToAddMessage() {
 
         //create custom layout with editText for mood message
-        //postiive button = Set Mood
+        //positive button = Set Mood
         //negative button = Cancel
         //if empty mood message, proceed with empty message
 
