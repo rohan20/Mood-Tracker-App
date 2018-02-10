@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_sage"
-    tools:context="com.example.rohantaneja.moodtracker.MoodFragment">
+    tools:context="com.example.rohantaneja.moodtracker.ui.MoodFragment">
 
     <ImageView
         android:id="@+id/iv_mood"

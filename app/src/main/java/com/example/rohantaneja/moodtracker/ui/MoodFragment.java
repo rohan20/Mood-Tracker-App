@@ -1,4 +1,4 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.ui;
 
 
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.example.rohantaneja.moodtracker.R;
 
 
 /**

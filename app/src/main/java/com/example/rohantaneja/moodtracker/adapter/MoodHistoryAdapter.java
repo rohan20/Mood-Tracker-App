@@ -1,10 +1,14 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.rohantaneja.moodtracker.model.Mood;
+import com.example.rohantaneja.moodtracker.adapter.viewholder.MoodHistoryViewHolder;
+import com.example.rohantaneja.moodtracker.R;
 
 import java.util.List;
 

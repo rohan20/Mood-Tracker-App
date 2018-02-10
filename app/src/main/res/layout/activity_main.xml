@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rohantaneja.moodtracker.MainActivity">
+    tools:context="com.example.rohantaneja.moodtracker.ui.MainActivity">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager_mood"

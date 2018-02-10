@@ -1,12 +1,14 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.ui;
 
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.rohantaneja.moodtracker.BaseActivity;
+import com.example.rohantaneja.moodtracker.adapter.MoodPagerAdapter;
+import com.example.rohantaneja.moodtracker.R;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 

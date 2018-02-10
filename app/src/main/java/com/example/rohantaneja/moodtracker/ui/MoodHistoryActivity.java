@@ -1,9 +1,12 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.ui;
 
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.view.ViewTreeObserver;
+
+import com.example.rohantaneja.moodtracker.BaseActivity;
+import com.example.rohantaneja.moodtracker.R;
 
 public class MoodHistoryActivity extends BaseActivity {
 

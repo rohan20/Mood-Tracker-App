@@ -1,4 +1,4 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.model;
 
 /**
  * Created by rohantaneja on 09/02/18.

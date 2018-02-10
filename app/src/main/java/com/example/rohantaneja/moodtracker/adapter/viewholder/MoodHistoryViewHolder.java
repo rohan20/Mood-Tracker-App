@@ -1,4 +1,4 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.adapter.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

@@ -1,10 +1,10 @@
-package com.example.rohantaneja.moodtracker;
+package com.example.rohantaneja.moodtracker.adapter;
 
-import android.content.Context;
-import android.content.MutableContextWrapper;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.rohantaneja.moodtracker.R;
+import com.example.rohantaneja.moodtracker.ui.MoodFragment;
 
 /**
  * Created by rohantaneja on 05/02/18.
