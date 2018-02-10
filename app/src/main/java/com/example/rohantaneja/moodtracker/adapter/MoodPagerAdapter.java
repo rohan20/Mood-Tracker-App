@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.ui.MoodFragment;
+import com.example.rohantaneja.moodtracker.util.Constants;
 
 /**
  * Created by rohantaneja on 05/02/18.
@@ -25,27 +26,27 @@ public class MoodPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
 
             case 0:
-                moodImageResId = R.drawable.smiley_sad;
+                moodImageResId = Constants.MOOD_IMAGE_SAD;
                 moodBackgroundId = R.color.faded_red;
                 break;
 
             case 1:
-                moodImageResId = R.drawable.smiley_disappointed;
+                moodImageResId = Constants.MOOD_IMAGE_DISAPPOINTED;
                 moodBackgroundId = R.color.warm_grey;
                 break;
 
             case 2:
-                moodImageResId = R.drawable.smiley_normal;
+                moodImageResId = Constants.MOOD_IMAGE_NORMAL;
                 moodBackgroundId = R.color.cornflower_blue_65;
                 break;
 
             case 3:
-                moodImageResId = R.drawable.smiley_happy;
+                moodImageResId = Constants.MOOD_IMAGE_HAPPY;
                 moodBackgroundId = R.color.light_sage;
                 break;
 
             default:
-                moodImageResId = R.drawable.smiley_super_happy;
+                moodImageResId = Constants.MOOD_IMAGE_SUPER_HAPPY;
                 moodBackgroundId = R.color.banana_yellow;
         }
 
@@ -54,6 +55,6 @@ public class MoodPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 5;
+        return Constants.NUMBER_OF_MOODS;
     }
 }
