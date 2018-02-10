@@ -27,27 +27,27 @@ public class MoodPagerAdapter extends FragmentPagerAdapter {
 
             case 0:
                 moodImageResId = Constants.MOOD_IMAGE_SAD;
-                moodBackgroundId = R.color.faded_red;
+                moodBackgroundId = Constants.MOOD_COLOR_SAD;
                 break;
 
             case 1:
                 moodImageResId = Constants.MOOD_IMAGE_DISAPPOINTED;
-                moodBackgroundId = R.color.warm_grey;
+                moodBackgroundId = Constants.MOOD_COLOR_DISAPPOINTED;
                 break;
 
             case 2:
                 moodImageResId = Constants.MOOD_IMAGE_NORMAL;
-                moodBackgroundId = R.color.cornflower_blue_65;
+                moodBackgroundId = Constants.MOOD_COLOR_NORMAL;
                 break;
 
             case 3:
                 moodImageResId = Constants.MOOD_IMAGE_HAPPY;
-                moodBackgroundId = R.color.light_sage;
+                moodBackgroundId = Constants.MOOD_COLOR_HAPPY;
                 break;
 
             default:
                 moodImageResId = Constants.MOOD_IMAGE_SUPER_HAPPY;
-                moodBackgroundId = R.color.banana_yellow;
+                moodBackgroundId = Constants.MOOD_COLOR_SUPER_HAPPY;
         }
 
         return MoodFragment.newInstance(moodImageResId, moodBackgroundId);
