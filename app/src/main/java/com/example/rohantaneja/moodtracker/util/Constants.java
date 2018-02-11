@@ -22,4 +22,6 @@ public class Constants {
     public static final int MOOD_COLOR_HAPPY = R.color.light_sage;
     public static final int MOOD_COLOR_SUPER_HAPPY = R.color.banana_yellow;
 
+    //todo Add constants for MOOD_ID
+
 }

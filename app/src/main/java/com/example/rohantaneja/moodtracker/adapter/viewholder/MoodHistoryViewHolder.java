@@ -22,6 +22,6 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindData(Mood mood) {
-
+        //todo set layout parents of each item according to the parent's width and mood of the item
     }
 }
