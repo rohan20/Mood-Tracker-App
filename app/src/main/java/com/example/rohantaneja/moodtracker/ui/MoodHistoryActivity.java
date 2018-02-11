@@ -2,11 +2,14 @@ package com.example.rohantaneja.moodtracker.ui;
 
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.view.View;
 import android.view.ViewTreeObserver;
 
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.R;
+import com.example.rohantaneja.moodtracker.adapter.MoodHistoryAdapter;
+import com.example.rohantaneja.moodtracker.model.Mood;
+
+import java.util.ArrayList;
 
 public class MoodHistoryActivity extends BaseActivity {
 
@@ -15,17 +18,17 @@ public class MoodHistoryActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_history);
 
-        final View view = findViewById(R.id.dummy_view);
         final ConstraintLayout parentLayout = findViewById(R.id.parent_layout);
 
         ViewTreeObserver viewTreeObserver = parentLayout.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
             @Override
             public void onGlobalLayout() {
-                //setting view's width and height dynamically
-                ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(parentLayout.getMeasuredWidth() / 4, parentLayout.getMeasuredHeight() / 7);
-                view.setLayoutParams(layoutParams);
+                MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(new ArrayList<Mood>(), MoodHistoryActivity.this);
+                moodHistoryAdapter.setParentDimensions(parentLayout.getMeasuredWidth(), parentLayout.getMeasuredHeight());
             }
         });
+
     }
 }

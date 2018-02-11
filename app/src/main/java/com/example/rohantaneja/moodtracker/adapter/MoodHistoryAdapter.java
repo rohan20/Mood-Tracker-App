@@ -2,6 +2,7 @@ package com.example.rohantaneja.moodtracker.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,23 @@ import java.util.List;
  * Created by rohantaneja on 10/02/18.
  */
 public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHolder> {
-    private final Context context;
+
+    private Context context;
     private List<Mood> items;
+
+    private double parentWidth;
+    private double parentHeight;
 
     public MoodHistoryAdapter(List<Mood> items, Context context) {
         this.items = items;
         this.context = context;
+    }
+
+    public void setParentDimensions(double parentWidth, double parentHeight) {
+        this.parentWidth = parentWidth;
+        this.parentHeight = parentHeight;
+
+        Log.e("parentDimensions", "Width: " + parentWidth + ", Height: " + parentHeight);
     }
 
     @Override
