@@ -1,9 +1,7 @@
 package com.example.rohantaneja.moodtracker.adapter.viewholder;
 
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewTreeObserver;
 
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.model.Mood;

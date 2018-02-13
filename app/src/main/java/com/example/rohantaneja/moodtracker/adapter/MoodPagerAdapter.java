@@ -3,7 +3,6 @@ package com.example.rohantaneja.moodtracker.adapter;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.ui.MoodFragment;
 import com.example.rohantaneja.moodtracker.util.Constants;
 

@@ -4,8 +4,6 @@
     <string name="view_mood_history">View mood history</string>
     <string name="add_mood_message">Add mood message</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mood_history">Mood History</string>
     <string name="select_mood">Select Mood</string>
 </resources>
