@@ -30,7 +30,6 @@ public class MoodHistoryActivity extends BaseActivity {
             }
         });
 
-        //todo create mood data arrayList
         //todo set data to adapter
     }
 }
