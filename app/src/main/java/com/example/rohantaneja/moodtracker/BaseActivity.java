@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.rohantaneja.moodtracker.model.Mood;
+
+import java.util.ArrayList;
+
 public class BaseActivity extends AppCompatActivity {
 
     @Override

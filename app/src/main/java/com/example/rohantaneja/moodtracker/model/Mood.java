@@ -6,8 +6,8 @@ package com.example.rohantaneja.moodtracker.model;
 
 public class Mood {
 
-    private String moodName;
     private int moodId;
+    private String moodName;
     private int moodResId;
 
     public String getMoodName() {
