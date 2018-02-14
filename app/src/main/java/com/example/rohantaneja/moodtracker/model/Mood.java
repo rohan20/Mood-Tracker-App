@@ -11,6 +11,13 @@ public class Mood {
     private int moodResId;
     private int moodColorId;
 
+    public Mood(int moodId, String moodName, int moodResId, int moodColorId) {
+        this.moodId = moodId;
+        this.moodName = moodName;
+        this.moodResId = moodResId;
+        this.moodColorId = moodColorId;
+    }
+
     public String getMoodName() {
         return moodName;
     }
