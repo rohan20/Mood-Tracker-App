@@ -9,6 +9,7 @@ public class Mood {
     private int moodId;
     private String moodName;
     private int moodResId;
+    private int moodColorId;
 
     public String getMoodName() {
         return moodName;
@@ -22,6 +23,10 @@ public class Mood {
         return moodResId;
     }
 
+    public int getMoodColorId() {
+        return moodColorId;
+    }
+
     public void setMoodName(String moodName) {
         this.moodName = moodName;
     }
@@ -32,5 +37,9 @@ public class Mood {
 
     public void setMoodResId(int moodResId) {
         this.moodResId = moodResId;
+    }
+
+    public void setMoodColorId(int moodColorId) {
+        this.moodColorId = moodColorId;
     }
 }
