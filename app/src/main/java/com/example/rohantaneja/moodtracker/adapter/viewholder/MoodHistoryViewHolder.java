@@ -19,7 +19,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         moodBackgroundView = itemView.findViewById(R.id.mood_background_view);
     }
 
-    public void bindData(Mood mood) {
+    public void bindData(Mood mood, double parentHeight, double parentWidth) {
         //todo set layout parents of each item according to the parent's width and mood of the item
     }
 }
