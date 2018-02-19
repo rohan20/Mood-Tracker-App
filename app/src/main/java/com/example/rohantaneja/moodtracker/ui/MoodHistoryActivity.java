@@ -34,6 +34,7 @@ public class MoodHistoryActivity extends BaseActivity {
             }
         });
 
-        //todo set data to adapter
+        MoodHistoryAdapter adapter = new MoodHistoryAdapter(getMoodsList(), this);
+        moodsRecyclerView.setAdapter(adapter);
     }
 }
