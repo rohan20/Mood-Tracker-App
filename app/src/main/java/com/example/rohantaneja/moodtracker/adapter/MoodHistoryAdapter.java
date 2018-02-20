@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.example.rohantaneja.moodtracker.model.Mood;
 import com.example.rohantaneja.moodtracker.adapter.viewholder.MoodHistoryViewHolder;
 import com.example.rohantaneja.moodtracker.R;
+import com.example.rohantaneja.moodtracker.ui.MoodHistoryActivity;
 
 import java.util.List;
 
@@ -32,8 +33,6 @@ public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHold
     public void setParentDimensions(double parentWidth, double parentHeight) {
         this.parentWidth = parentWidth;
         this.parentHeight = parentHeight;
-
-        Log.e("parentDimensions", "Width: " + parentWidth + ", Height: " + parentHeight);
     }
 
     @Override

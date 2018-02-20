@@ -8,10 +8,10 @@
     tools:context="com.example.rohantaneja.moodtracker.ui.MoodHistoryActivity">
 
     <android.support.v7.widget.RecyclerView
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         android:id="@+id/rv_moods_of_the_week"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
