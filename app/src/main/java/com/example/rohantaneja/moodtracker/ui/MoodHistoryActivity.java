@@ -29,7 +29,7 @@ public class MoodHistoryActivity extends BaseActivity {
 
             @Override
             public void onGlobalLayout() {
-                MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(new ArrayList<Mood>(), MoodHistoryActivity.this);
+                MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(getMoodsList(), MoodHistoryActivity.this);
                 moodHistoryAdapter.setParentDimensions(parentLayout.getMeasuredWidth(), parentLayout.getMeasuredHeight());
                 moodsRecyclerView.setAdapter(moodHistoryAdapter);
             }
