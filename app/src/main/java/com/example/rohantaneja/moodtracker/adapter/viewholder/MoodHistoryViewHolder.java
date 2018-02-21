@@ -55,10 +55,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
                 break;
         }
 
-        Log.e("bindData", "moodWidthMultiplier: " + moodWidthMultiplier);
         moodBackgroundView.setBackgroundResource(moodColor);
-        Log.e("bindData", parentWidth * moodWidthMultiplier + "");
-        Log.e("bindData", (int) (parentWidth * moodWidthMultiplier) + "");
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_MOODS));
     }
 }
