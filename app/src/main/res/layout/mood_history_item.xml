@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:id="@+id/parent_constraint_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -23,9 +22,9 @@
         android:background="@null"
         android:contentDescription="@null"
         android:src="@drawable/ic_comment_black_48px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/mood_background_view"
+        app:layout_constraintEnd_toEndOf="@id/mood_background_view"
+        app:layout_constraintTop_toTopOf="@id/mood_background_view" />
 
     <TextView
         android:id="@+id/day_text_view"
