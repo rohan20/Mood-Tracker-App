@@ -34,4 +34,10 @@ public class Constants {
     public static final String MOOD_HAPPY = "Happy";
     public static final String MOOD_SUPER_HAPPY = "Super Happy";
 
+    public static final double MOOD_SAD_MULTIPLIER = 1/5;
+    public static final double MOOD_DISAPPOINTED_MULTIPLIER = 2/5;
+    public static final double MOOD_NORMAL_MULTIPLIER = 3/5;
+    public static final double MOOD_HAPPY_MULTIPLIER = 4/5;
+    public static final double MOOD_SUPER_HAPPY_MULTIPLIER = 5/5;
+
 }
