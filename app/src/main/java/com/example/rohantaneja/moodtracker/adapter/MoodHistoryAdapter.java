@@ -40,7 +40,11 @@ public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHold
                                                     int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.mood_history_item, parent, false);
-        return new MoodHistoryViewHolder(v);
+
+        MoodHistoryViewHolder viewHolder = new MoodHistoryViewHolder(v);
+        viewHolder.setTotalItems(getItemCount());
+
+        return viewHolder;
     }
 
     @Override

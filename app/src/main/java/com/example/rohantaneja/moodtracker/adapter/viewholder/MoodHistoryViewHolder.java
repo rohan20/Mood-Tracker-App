@@ -16,10 +16,15 @@ import com.example.rohantaneja.moodtracker.util.Constants;
 public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
     private View moodBackgroundView;
+    private int numOfItems;
 
     public MoodHistoryViewHolder(View itemView) {
         super(itemView);
         moodBackgroundView = itemView.findViewById(R.id.mood_background_view);
+    }
+
+    public void setTotalItems(int numOfItems) {
+        this.numOfItems = numOfItems;
     }
 
     public void bindData(Mood mood, double parentHeight, double parentWidth) {
@@ -56,6 +61,6 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         }
 
         moodBackgroundView.setBackgroundResource(moodColor);
-        moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_MOODS));
+        moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / numOfItems));
     }
 }
