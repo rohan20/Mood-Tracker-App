@@ -25,6 +25,13 @@ public class BaseActivity extends AppCompatActivity {
         ArrayList<Mood> moodsList = new ArrayList<>();
 
         moodsList.add(
+                new Mood(Constants.MOOD_ID_NORMAL,
+                        Constants.MOOD_NORMAL,
+                        Constants.MOOD_IMAGE_NORMAL,
+                        Constants.MOOD_COLOR_NORMAL
+                ));
+
+        moodsList.add(
                 new Mood(Constants.MOOD_ID_SAD,
                         Constants.MOOD_SAD,
                         Constants.MOOD_IMAGE_SAD,
@@ -39,17 +46,24 @@ public class BaseActivity extends AppCompatActivity {
                 ));
 
         moodsList.add(
-                new Mood(Constants.MOOD_ID_NORMAL,
-                        Constants.MOOD_NORMAL,
-                        Constants.MOOD_IMAGE_NORMAL,
-                        Constants.MOOD_COLOR_NORMAL
-                ));
-
-        moodsList.add(
                 new Mood(Constants.MOOD_ID_HAPPY,
                         Constants.MOOD_HAPPY,
                         Constants.MOOD_IMAGE_HAPPY,
                         Constants.MOOD_COLOR_HAPPY
+                ));
+
+        moodsList.add(
+                new Mood(Constants.MOOD_ID_SUPER_HAPPY,
+                        Constants.MOOD_SUPER_HAPPY,
+                        Constants.MOOD_IMAGE_SUPER_HAPPY,
+                        Constants.MOOD_COLOR_SUPER_HAPPY
+                ));
+
+        moodsList.add(
+                new Mood(Constants.MOOD_ID_NORMAL,
+                        Constants.MOOD_NORMAL,
+                        Constants.MOOD_IMAGE_NORMAL,
+                        Constants.MOOD_COLOR_NORMAL
                 ));
 
         moodsList.add(
