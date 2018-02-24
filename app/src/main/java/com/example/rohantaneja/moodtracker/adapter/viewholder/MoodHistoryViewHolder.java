@@ -2,7 +2,6 @@ package com.example.rohantaneja.moodtracker.adapter.viewholder;
 
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.example.rohantaneja.moodtracker.R;
@@ -16,19 +15,15 @@ import com.example.rohantaneja.moodtracker.util.Constants;
 public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
     private View moodBackgroundView;
-    private int numOfItems;
+    private int numOfMoods;
 
-    public MoodHistoryViewHolder(View itemView) {
+    public MoodHistoryViewHolder(View itemView, int numOfMoods) {
         super(itemView);
         moodBackgroundView = itemView.findViewById(R.id.mood_background_view);
-    }
-
-    public void setTotalItems(int numOfItems) {
-        this.numOfItems = numOfItems;
+        this.numOfMoods = numOfMoods;
     }
 
     public void bindData(Mood mood, double parentHeight, double parentWidth) {
-        //todo set layout parents of each item according to the parent's width and mood of the item
 
         int moodColor = 0;
         double moodWidthMultiplier = 0;
@@ -61,6 +56,6 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         }
 
         moodBackgroundView.setBackgroundResource(moodColor);
-        moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / numOfItems));
+        moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / numOfMoods));
     }
 }

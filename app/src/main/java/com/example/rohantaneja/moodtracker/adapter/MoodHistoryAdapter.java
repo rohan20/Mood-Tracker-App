@@ -20,13 +20,13 @@ import java.util.List;
 public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHolder> {
 
     private Context context;
-    private List<Mood> items;
+    private List<Mood> moodsList;
 
     private double parentWidth;
     private double parentHeight;
 
-    public MoodHistoryAdapter(List<Mood> items, Context context) {
-        this.items = items;
+    public MoodHistoryAdapter(List<Mood> moodsList, Context context) {
+        this.moodsList = moodsList;
         this.context = context;
     }
 
@@ -41,23 +41,18 @@ public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHold
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.mood_history_item, parent, false);
 
-        MoodHistoryViewHolder viewHolder = new MoodHistoryViewHolder(v);
-        viewHolder.setTotalItems(getItemCount());
-
+        MoodHistoryViewHolder viewHolder = new MoodHistoryViewHolder(v, moodsList.size());
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(MoodHistoryViewHolder holder, int position) {
-        Mood moodItem = items.get(position);
+        Mood moodItem = moodsList.get(position);
         holder.bindData(moodItem, parentHeight, parentWidth);
     }
 
     @Override
     public int getItemCount() {
-        if (items == null) {
-            return 0;
-        }
-        return items.size();
+        return moodsList == null ? 0 : moodsList.size();
     }
 }
