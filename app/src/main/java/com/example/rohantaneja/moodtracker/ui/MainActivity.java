@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void addMoodMessage() {
+        // TODO: 24/02/18 Implement this method and save the message in SharedPrefs or use an ORM
         showToast(getString(R.string.add_mood_message));
         //create alert for adding message
         showAlertToAddMessage();

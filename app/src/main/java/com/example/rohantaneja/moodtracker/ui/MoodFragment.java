@@ -17,11 +17,9 @@ import com.example.rohantaneja.moodtracker.R;
  */
 public class MoodFragment extends Fragment {
 
-
     public MoodFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +38,7 @@ public class MoodFragment extends Fragment {
     public static MoodFragment newInstance(int moodImageResId, int moodBackgroundId) {
         MoodFragment moodFragment = new MoodFragment();
         Bundle bundle = new Bundle();
+        // TODO: 24/02/18 Move these keys to Constants.java
         bundle.putInt("image", moodImageResId);
         bundle.putInt("background", moodBackgroundId);
         moodFragment.setArguments(bundle);

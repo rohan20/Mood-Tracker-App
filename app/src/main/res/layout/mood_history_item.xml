@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <!-- TODO: Add date text to mood history (1 day ago... 7 days ago) -->
+
     <View
         android:id="@+id/mood_background_view"
         android:layout_width="match_parent"

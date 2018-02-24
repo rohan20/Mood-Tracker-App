@@ -25,6 +25,8 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
     public void bindData(Mood mood, double parentHeight, double parentWidth) {
 
+        // TODO: 24/02/18 Add date text to mood history (1 day ago... 7 days ago)
+
         int moodColor = 0;
         double moodWidthMultiplier = 0;
 
