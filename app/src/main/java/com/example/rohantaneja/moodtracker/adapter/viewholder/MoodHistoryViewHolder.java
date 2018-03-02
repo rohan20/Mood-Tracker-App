@@ -3,6 +3,7 @@ package com.example.rohantaneja.moodtracker.adapter.viewholder;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.model.Mood;
@@ -15,11 +16,13 @@ import com.example.rohantaneja.moodtracker.util.Constants;
 public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
     private View moodBackgroundView;
+    private TextView moodDayTextView;
     private int numOfMoods;
 
     public MoodHistoryViewHolder(View itemView, int numOfMoods) {
         super(itemView);
         moodBackgroundView = itemView.findViewById(R.id.mood_background_view);
+        moodDayTextView = itemView.findViewById(R.id.day_text_view);
         this.numOfMoods = numOfMoods;
     }
 
@@ -94,5 +97,6 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
         }
 
+        moodDayTextView.setText(moodDayText);
     }
 }
