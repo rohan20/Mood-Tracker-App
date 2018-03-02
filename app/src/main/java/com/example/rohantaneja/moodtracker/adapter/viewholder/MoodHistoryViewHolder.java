@@ -23,7 +23,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         this.numOfMoods = numOfMoods;
     }
 
-    public void bindData(Mood mood, double parentHeight, double parentWidth) {
+    public void bindData(int moodItemPosition, Mood mood, double parentHeight, double parentWidth) {
 
         // TODO: 24/02/18 Add date text to mood history (1 day ago... 7 days ago)
 
@@ -59,5 +59,40 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
         moodBackgroundView.setBackgroundResource(moodColor);
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / numOfMoods));
+
+        String moodDayText = "";
+
+        //set mood date
+        switch (moodItemPosition) {
+            case 0:
+                moodDayText = "Today";
+                break;
+
+            case 1:
+                moodDayText = "One day ago";
+                break;
+
+            case 2:
+                moodDayText = "Two days ago";
+                break;
+
+            case 3:
+                moodDayText = "Three days ago";
+                break;
+
+            case 4:
+                moodDayText = "Four days ago";
+                break;
+
+            case 5:
+                moodDayText = "Five days ago";
+                break;
+
+            case 6:
+                moodDayText = "Six days ago";
+                break;
+
+        }
+
     }
 }
