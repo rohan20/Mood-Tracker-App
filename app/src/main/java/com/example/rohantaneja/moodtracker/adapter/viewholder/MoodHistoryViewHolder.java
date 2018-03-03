@@ -1,10 +1,12 @@
 package com.example.rohantaneja.moodtracker.adapter.viewholder;
 
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.model.Mood;
@@ -29,7 +31,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         this.numOfMoods = numOfMoods;
     }
 
-    public void bindData(int moodItemPosition, Mood mood, double parentHeight, double parentWidth) {
+    public void bindData(int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
 
         // TODO: 24/02/18 Add date text to mood history (1 day ago... 7 days ago)
 
@@ -105,7 +107,12 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         if (mood.getMoodMessage().isEmpty()) {
             moodMessageImageButton.setVisibility(View.GONE);
         } else {
-
+            moodMessageImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar.make(moodMessageImageButton, mood.getMoodMessage(), Snackbar.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }

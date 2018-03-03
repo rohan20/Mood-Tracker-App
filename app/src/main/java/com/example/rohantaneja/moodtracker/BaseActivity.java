@@ -38,7 +38,7 @@ public class BaseActivity extends AppCompatActivity {
                         Constants.MOOD_SAD,
                         Constants.MOOD_IMAGE_SAD,
                         Constants.MOOD_COLOR_SAD,
-                        getString(R.string.score_50)
+                        ""
                 ));
 
         moodsList.add(
@@ -70,7 +70,7 @@ public class BaseActivity extends AppCompatActivity {
                         Constants.MOOD_NORMAL,
                         Constants.MOOD_IMAGE_NORMAL,
                         Constants.MOOD_COLOR_NORMAL,
-                        getString(R.string.score_70)
+                        ""
                 ));
 
         moodsList.add(
