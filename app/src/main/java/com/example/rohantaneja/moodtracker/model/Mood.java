@@ -10,12 +10,14 @@ public class Mood {
     private String moodName;
     private int moodResId;
     private int moodColorId;
+    private String moodMessage;
 
-    public Mood(int moodId, String moodName, int moodResId, int moodColorId) {
+    public Mood(int moodId, String moodName, int moodResId, int moodColorId, String moodMessage) {
         this.moodId = moodId;
         this.moodName = moodName;
         this.moodResId = moodResId;
         this.moodColorId = moodColorId;
+        this.moodMessage = moodMessage;
     }
 
     public String getMoodName() {
@@ -34,6 +36,10 @@ public class Mood {
         return moodColorId;
     }
 
+    public String getMoodMessage() {
+        return moodMessage;
+    }
+
     public void setMoodName(String moodName) {
         this.moodName = moodName;
     }
@@ -48,5 +54,9 @@ public class Mood {
 
     public void setMoodColorId(int moodColorId) {
         this.moodColorId = moodColorId;
+    }
+
+    public void setMoodMessage(String moodMessage) {
+        this.moodMessage = moodMessage;
     }
 }
