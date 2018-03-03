@@ -110,7 +110,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
             moodMessageImageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(moodMessageImageButton, mood.getMoodMessage(), Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(moodMessageImageButton, mood.getMoodName() + ": " + mood.getMoodMessage(), Snackbar.LENGTH_SHORT).show();
                 }
             });
         }
