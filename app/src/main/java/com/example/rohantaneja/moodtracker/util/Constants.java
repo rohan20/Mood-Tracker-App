@@ -9,6 +9,7 @@ import com.example.rohantaneja.moodtracker.R;
 public class Constants {
 
     public static final int NUMBER_OF_MOODS = 5;
+    public static final int NUMBER_OF_DAYS = 7;
 
     public static final int MOOD_IMAGE_SAD = R.drawable.smiley_sad;
     public static final int MOOD_IMAGE_DISAPPOINTED = R.drawable.smiley_disappointed;

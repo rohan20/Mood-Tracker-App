@@ -57,29 +57,29 @@ public class BaseActivity extends AppCompatActivity {
                         getString(R.string.score_80)
                 ));
 
-        moodsList.add(
-                new Mood(Constants.MOOD_ID_SUPER_HAPPY,
-                        Constants.MOOD_SUPER_HAPPY,
-                        Constants.MOOD_IMAGE_SUPER_HAPPY,
-                        Constants.MOOD_COLOR_SUPER_HAPPY,
-                        getString(R.string.score_90)
-                ));
-
-        moodsList.add(
-                new Mood(Constants.MOOD_ID_NORMAL,
-                        Constants.MOOD_NORMAL,
-                        Constants.MOOD_IMAGE_NORMAL,
-                        Constants.MOOD_COLOR_NORMAL,
-                        ""
-                ));
-
-        moodsList.add(
-                new Mood(Constants.MOOD_ID_SUPER_HAPPY,
-                        Constants.MOOD_SUPER_HAPPY,
-                        Constants.MOOD_IMAGE_SUPER_HAPPY,
-                        Constants.MOOD_COLOR_SUPER_HAPPY,
-                        getString(R.string.score_90)
-                ));
+//        moodsList.add(
+//                new Mood(Constants.MOOD_ID_SUPER_HAPPY,
+//                        Constants.MOOD_SUPER_HAPPY,
+//                        Constants.MOOD_IMAGE_SUPER_HAPPY,
+//                        Constants.MOOD_COLOR_SUPER_HAPPY,
+//                        getString(R.string.score_90)
+//                ));
+//
+//        moodsList.add(
+//                new Mood(Constants.MOOD_ID_NORMAL,
+//                        Constants.MOOD_NORMAL,
+//                        Constants.MOOD_IMAGE_NORMAL,
+//                        Constants.MOOD_COLOR_NORMAL,
+//                        ""
+//                ));
+//
+//        moodsList.add(
+//                new Mood(Constants.MOOD_ID_SUPER_HAPPY,
+//                        Constants.MOOD_SUPER_HAPPY,
+//                        Constants.MOOD_IMAGE_SUPER_HAPPY,
+//                        Constants.MOOD_COLOR_SUPER_HAPPY,
+//                        getString(R.string.score_90)
+//                ));
 
         return moodsList;
     }

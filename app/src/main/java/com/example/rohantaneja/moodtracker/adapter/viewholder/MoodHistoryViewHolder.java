@@ -22,15 +22,13 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
     private View moodBackgroundView;
     private TextView moodDayTextView;
     private ImageButton moodMessageImageButton;
-    private int numOfMoods;
     private Context context;
 
-    public MoodHistoryViewHolder(View itemView, int numOfMoods) {
+    public MoodHistoryViewHolder(View itemView) {
         super(itemView);
         moodBackgroundView = itemView.findViewById(R.id.mood_background_view);
         moodDayTextView = itemView.findViewById(R.id.day_text_view);
         moodMessageImageButton = itemView.findViewById(R.id.message_image_button);
-        this.numOfMoods = numOfMoods;
     }
 
     public void bindData(Context context, int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
@@ -66,8 +64,9 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
                 break;
         }
 
+
         moodBackgroundView.setBackgroundResource(moodColor);
-        moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / numOfMoods));
+        moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
         String moodDayText = "";
 
