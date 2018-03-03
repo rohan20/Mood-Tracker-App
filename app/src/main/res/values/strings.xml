@@ -6,4 +6,9 @@
 
     <string name="mood_history">Mood History</string>
     <string name="select_mood">Select Mood</string>
+    <string name="score_70">Scored 70% in my exams</string>
+    <string name="score_50">Scored 50% in my exams</string>
+    <string name="score_60">Scored 60% in my exams</string>
+    <string name="score_80">Scored 80% in my exams</string>
+    <string name="score_90">Scored 90% in my exams</string>
 </resources>

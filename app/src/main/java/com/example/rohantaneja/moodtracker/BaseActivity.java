@@ -28,49 +28,57 @@ public class BaseActivity extends AppCompatActivity {
                 new Mood(Constants.MOOD_ID_NORMAL,
                         Constants.MOOD_NORMAL,
                         Constants.MOOD_IMAGE_NORMAL,
-                        Constants.MOOD_COLOR_NORMAL
+                        Constants.MOOD_COLOR_NORMAL,
+                        getString(R.string.score_70)
+
                 ));
 
         moodsList.add(
                 new Mood(Constants.MOOD_ID_SAD,
                         Constants.MOOD_SAD,
                         Constants.MOOD_IMAGE_SAD,
-                        Constants.MOOD_COLOR_SAD
+                        Constants.MOOD_COLOR_SAD,
+                        getString(R.string.score_50)
                 ));
 
         moodsList.add(
                 new Mood(Constants.MOOD_ID_DISAPPOINTED,
                         Constants.MOOD_DISAPPOINTED,
                         Constants.MOOD_IMAGE_DISAPPOINTED,
-                        Constants.MOOD_COLOR_DISAPPOINTED
+                        Constants.MOOD_COLOR_DISAPPOINTED,
+                        getString(R.string.score_60)
                 ));
 
         moodsList.add(
                 new Mood(Constants.MOOD_ID_HAPPY,
                         Constants.MOOD_HAPPY,
                         Constants.MOOD_IMAGE_HAPPY,
-                        Constants.MOOD_COLOR_HAPPY
+                        Constants.MOOD_COLOR_HAPPY,
+                        getString(R.string.score_80)
                 ));
 
         moodsList.add(
                 new Mood(Constants.MOOD_ID_SUPER_HAPPY,
                         Constants.MOOD_SUPER_HAPPY,
                         Constants.MOOD_IMAGE_SUPER_HAPPY,
-                        Constants.MOOD_COLOR_SUPER_HAPPY
+                        Constants.MOOD_COLOR_SUPER_HAPPY,
+                        getString(R.string.score_90)
                 ));
 
         moodsList.add(
                 new Mood(Constants.MOOD_ID_NORMAL,
                         Constants.MOOD_NORMAL,
                         Constants.MOOD_IMAGE_NORMAL,
-                        Constants.MOOD_COLOR_NORMAL
+                        Constants.MOOD_COLOR_NORMAL,
+                        getString(R.string.score_70)
                 ));
 
         moodsList.add(
                 new Mood(Constants.MOOD_ID_SUPER_HAPPY,
                         Constants.MOOD_SUPER_HAPPY,
                         Constants.MOOD_IMAGE_SUPER_HAPPY,
-                        Constants.MOOD_COLOR_SUPER_HAPPY
+                        Constants.MOOD_COLOR_SUPER_HAPPY,
+                        getString(R.string.score_90)
                 ));
 
         return moodsList;
