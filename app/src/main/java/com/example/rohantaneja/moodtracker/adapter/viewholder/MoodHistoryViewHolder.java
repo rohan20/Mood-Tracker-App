@@ -34,38 +34,32 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
     public void bindData(Context context, int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
         this.context = context;
 
-        int moodColor = 0;
         double moodWidthMultiplier = 0;
 
         switch (mood.getMoodId()) {
             case Constants.MOOD_ID_SAD:
-                moodColor = Constants.MOOD_COLOR_SAD;
                 moodWidthMultiplier = Constants.MOOD_SAD_MULTIPLIER;
                 break;
 
             case Constants.MOOD_ID_DISAPPOINTED:
-                moodColor = Constants.MOOD_COLOR_DISAPPOINTED;
                 moodWidthMultiplier = Constants.MOOD_DISAPPOINTED_MULTIPLIER;
                 break;
 
             case Constants.MOOD_ID_NORMAL:
-                moodColor = Constants.MOOD_COLOR_NORMAL;
                 moodWidthMultiplier = Constants.MOOD_NORMAL_MULTIPLIER;
                 break;
 
             case Constants.MOOD_ID_HAPPY:
-                moodColor = Constants.MOOD_COLOR_HAPPY;
                 moodWidthMultiplier = Constants.MOOD_HAPPY_MULTIPLIER;
                 break;
 
             case Constants.MOOD_ID_SUPER_HAPPY:
-                moodColor = Constants.MOOD_COLOR_SUPER_HAPPY;
                 moodWidthMultiplier = Constants.MOOD_SUPER_HAPPY_MULTIPLIER;
                 break;
         }
 
 
-        moodBackgroundView.setBackgroundResource(moodColor);
+        moodBackgroundView.setBackgroundResource(mood.getMoodColorId());
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
         String moodDayText = "";
@@ -104,6 +98,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
         moodDayTextView.setText(moodDayText);
 
+        //set mood message
         if (mood.getMoodMessage().isEmpty()) {
             moodMessageImageButton.setVisibility(View.GONE);
         } else {
