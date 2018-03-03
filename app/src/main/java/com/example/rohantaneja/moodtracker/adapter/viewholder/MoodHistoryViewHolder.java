@@ -36,6 +36,8 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
         double moodWidthMultiplier = 0;
 
+        // TODO: 04/03/18 Move this switch statement to the place where the mood is set for a day (in the Activity)
+
         switch (mood.getMoodId()) {
             case Constants.MOOD_ID_SAD:
                 moodWidthMultiplier = Constants.MOOD_SAD_MULTIPLIER;
