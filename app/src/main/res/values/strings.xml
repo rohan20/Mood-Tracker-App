@@ -11,4 +11,11 @@
     <string name="score_60">Scored 60% in my exams</string>
     <string name="score_80">Scored 80% in my exams</string>
     <string name="score_90">Scored 90% in my exams</string>
+    <string name="days_ago_today">Today</string>
+    <string name="days_ago_one">One day ago</string>
+    <string name="days_ago_two">Two days ago</string>
+    <string name="days_ago_three">Three days ago</string>
+    <string name="days_ago_four">Four days ago</string>
+    <string name="days_ago_five">Five days ago</string>
+    <string name="days_ago_six">Six days ago</string>
 </resources>

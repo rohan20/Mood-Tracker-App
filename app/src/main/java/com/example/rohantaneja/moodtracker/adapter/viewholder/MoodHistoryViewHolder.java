@@ -74,31 +74,31 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         //set mood date
         switch (moodItemPosition) {
             case 0:
-                moodDayText = "Today";
+                moodDayText = context.getString(R.string.days_ago_today);
                 break;
 
             case 1:
-                moodDayText = "One day ago";
+                moodDayText = context.getString(R.string.days_ago_one);
                 break;
 
             case 2:
-                moodDayText = "Two days ago";
+                moodDayText = context.getString(R.string.days_ago_two);
                 break;
 
             case 3:
-                moodDayText = "Three days ago";
+                moodDayText = context.getString(R.string.days_ago_three);
                 break;
 
             case 4:
-                moodDayText = "Four days ago";
+                moodDayText = context.getString(R.string.days_ago_four);
                 break;
 
             case 5:
-                moodDayText = "Five days ago";
+                moodDayText = context.getString(R.string.days_ago_five);
                 break;
 
             case 6:
-                moodDayText = "Six days ago";
+                moodDayText = context.getString(R.string.days_ago_six);
                 break;
 
         }
