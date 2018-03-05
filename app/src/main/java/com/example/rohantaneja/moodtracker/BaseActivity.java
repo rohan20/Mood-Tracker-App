@@ -100,4 +100,21 @@ public class BaseActivity extends AppCompatActivity {
                 return Constants.MOOD_NORMAL;
         }
     }
+
+    public int getMoodResIdFromMoodId(int moodId) {
+        switch (moodId){
+            case Constants.MOOD_ID_SAD:
+                return Constants.MOOD_IMAGE_SAD;
+            case Constants.MOOD_ID_DISAPPOINTED:
+                return Constants.MOOD_IMAGE_DISAPPOINTED;
+            case Constants.MOOD_ID_HAPPY:
+                return Constants.MOOD_IMAGE_HAPPY;
+            case Constants.MOOD_ID_SUPER_HAPPY:
+                return Constants.MOOD_IMAGE_SUPER_HAPPY;
+
+            //return "Normal" by default
+            default:
+                return Constants.MOOD_IMAGE_NORMAL;
+        }
+    }
 }
