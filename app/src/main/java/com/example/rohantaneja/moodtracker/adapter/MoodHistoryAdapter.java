@@ -48,7 +48,7 @@ public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHold
     @Override
     public void onBindViewHolder(MoodHistoryViewHolder holder, int position) {
         Mood moodItem = moodsList.get(position);
-        holder.bindData(position, moodItem, parentHeight, parentWidth);
+        holder.bindData(moodItem, parentHeight, parentWidth);
     }
 
     @Override

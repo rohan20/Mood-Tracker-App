@@ -33,7 +33,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         moodMessageImageButton = itemView.findViewById(R.id.message_image_button);
     }
 
-    public void bindData(int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
+    public void bindData(Mood mood, double parentHeight, double parentWidth) {
 
         int moodId = mood.getMoodId();
 
