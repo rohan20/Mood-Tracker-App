@@ -35,12 +35,14 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
 
     public void bindData(int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
 
-        double moodWidthMultiplier = (((BaseActivity) context).getMoodWidthMultiplierFromMoodId(mood.getMoodId()));
-        moodBackgroundView.setBackgroundResource(((BaseActivity) context).getMoodColorIdFromMoodId(mood.getMoodId()));
+        int moodId = mood.getMoodId();
+
+        double moodWidthMultiplier = (((BaseActivity) context).getMoodWidthMultiplierFromMoodId(moodId));
+        moodBackgroundView.setBackgroundResource(((BaseActivity) context).getMoodColorIdFromMoodId(moodId));
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
         //set mood date
-        String moodDayText = context.getString(((BaseActivity) context).getMoodDayTextIdFromMoodId(mood.getMoodId()));
+        String moodDayText = context.getString(((BaseActivity) context).getMoodDayTextIdFromMoodId(moodId));
         moodDayTextView.setText(moodDayText);
 
         //set mood message
@@ -48,7 +50,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
             moodMessageImageButton.setVisibility(View.GONE);
         } else {
 
-            final String snackbarMoodText = ((BaseActivity) context).getMoodNameFromMoodId(mood.getMoodId()) + ": " + mood.getMoodMessage();
+            final String snackbarMoodText = ((BaseActivity) context).getMoodNameFromMoodId(moodId) + ": " + mood.getMoodMessage();
 
             moodMessageImageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
