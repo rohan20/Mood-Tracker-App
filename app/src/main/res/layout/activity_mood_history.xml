@@ -18,6 +18,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--TODO Move the empty state views below to a different layout-->
+    <!--TODO Save dimensions in dimen.xml-->
+
     <TextView
         android:id="@+id/empty_state_message_text_view"
         android:layout_width="0dp"
