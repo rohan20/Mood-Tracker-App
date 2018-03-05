@@ -30,6 +30,7 @@ public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHold
 
     public void updateMoodsList(ArrayList<Mood> moodsList) {
         this.moodsList = moodsList;
+        notifyDataSetChanged();
     }
 
     public void setParentDimensions(double parentWidth, double parentHeight) {
