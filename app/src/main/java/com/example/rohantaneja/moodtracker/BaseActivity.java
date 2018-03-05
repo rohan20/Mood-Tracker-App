@@ -151,4 +151,21 @@ public class BaseActivity extends AppCompatActivity {
                 return Constants.MOOD_COLOR_NORMAL;
         }
     }
+
+    public int getMoodColorIdFromViewpagerPosition(int viewpagerPosition) {
+        switch (viewpagerPosition) {
+            case 0:
+                return Constants.MOOD_COLOR_SAD;
+            case 1:
+                return Constants.MOOD_COLOR_DISAPPOINTED;
+            case 3:
+                return Constants.MOOD_COLOR_HAPPY;
+            case 4:
+                return Constants.MOOD_COLOR_SUPER_HAPPY;
+
+            //return "Normal" by default
+            default:
+                return Constants.MOOD_COLOR_NORMAL;
+        }
+    }
 }
