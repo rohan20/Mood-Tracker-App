@@ -21,6 +21,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TODO: 05/03/18 Show coach marks for add mood and view mood history for the first time
+
         ibMoodMessage = findViewById(R.id.ib_mood_message);
         ibMoodHistory = findViewById(R.id.ib_mood_history);
         viewPager = findViewById(R.id.viewpager_mood);
@@ -66,5 +68,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         //negative button = Cancel
         //if empty mood message, proceed with empty message
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // TODO: 05/03/18 Show coach marks on set mood button when the user navigates back from an empty mood history screen
     }
 }

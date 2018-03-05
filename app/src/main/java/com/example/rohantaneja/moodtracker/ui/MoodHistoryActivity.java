@@ -19,6 +19,7 @@ public class MoodHistoryActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_history);
 
+        // TODO: 05/03/18 Make use of empty state by providing a Call To Action for adding mood message
         // TODO: 24/02/18 Reset the messages at midnight i.e. remove "7 days ago" message and update the rest
 
         moodsRecyclerView = findViewById(R.id.rv_moods_of_the_week);
