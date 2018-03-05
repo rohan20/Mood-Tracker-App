@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.model.Mood;
 import com.example.rohantaneja.moodtracker.util.Constants;
@@ -60,7 +61,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         }
 
 
-        moodBackgroundView.setBackgroundResource(mood.getMoodColorId());
+        moodBackgroundView.setBackgroundResource(((BaseActivity)context).getMoodColorIdFromMoodId(mood.getMoodId()));
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
         String moodDayText = "";
@@ -103,10 +104,13 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         if (mood.getMoodMessage().isEmpty()) {
             moodMessageImageButton.setVisibility(View.GONE);
         } else {
+
+            final String snackbarMoodText = ((BaseActivity)context).getMoodNameFromMoodId(mood.getMoodId()) + ": " + mood.getMoodMessage();
+
             moodMessageImageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(moodMessageImageButton, mood.getMoodName() + ": " + mood.getMoodMessage(), Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(moodMessageImageButton, snackbarMoodText, Snackbar.LENGTH_SHORT).show();
                 }
             });
         }
