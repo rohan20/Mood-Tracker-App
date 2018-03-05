@@ -164,4 +164,23 @@ public class BaseActivity extends AppCompatActivity {
                 return Constants.MOOD_NORMAL_MULTIPLIER;
         }
     }
+
+    public int getMoodDayTextIdFromMoodId(int moodId) {
+        switch (moodId) {
+            case 1:
+                return R.string.days_ago_one;
+            case 2:
+                return R.string.days_ago_two;
+            case 3:
+                return R.string.days_ago_three;
+            case 4:
+                return R.string.days_ago_four;
+            case 5:
+                return R.string.days_ago_five;
+            case 6:
+                return R.string.days_ago_six;
+            default:
+                return R.string.days_ago_today;
+        }
+    }
 }
