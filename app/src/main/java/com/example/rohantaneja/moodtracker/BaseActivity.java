@@ -118,6 +118,23 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public int getMoodResIdFromViewpagerPosition(int viewpagerPosition) {
+        switch (viewpagerPosition) {
+            case 0:
+                return Constants.MOOD_IMAGE_SAD;
+            case 1:
+                return Constants.MOOD_IMAGE_DISAPPOINTED;
+            case 3:
+                return Constants.MOOD_IMAGE_HAPPY;
+            case 4:
+                return Constants.MOOD_IMAGE_SUPER_HAPPY;
+
+            //return "Normal" by default
+            default:
+                return Constants.MOOD_IMAGE_NORMAL;
+        }
+    }
+
     public int getMoodColorIdFromMoodId(int moodId) {
         switch (moodId) {
             case Constants.MOOD_ID_SAD:
