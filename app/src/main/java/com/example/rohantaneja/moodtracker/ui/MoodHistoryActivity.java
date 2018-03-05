@@ -25,7 +25,7 @@ public class MoodHistoryActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_history);
 
-
+        // TODO: 06/03/18 Back button to go back to PARENT_ACTIVITY
         // TODO: 24/02/18 Reset the messages at midnight i.e. remove "7 days ago" message and update the rest
 
         moodsRecyclerView = findViewById(R.id.rv_moods_of_the_week);

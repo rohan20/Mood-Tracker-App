@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void viewMoodHistory() {
+        // TODO: 06/03/18 Add transition while launching mood history activity
         Intent i = new Intent(this, MoodHistoryActivity.class);
         startActivity(i);
     }
