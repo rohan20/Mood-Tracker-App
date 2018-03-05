@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ibMoodHistory = findViewById(R.id.ib_mood_history);
         viewPager = findViewById(R.id.viewpager_mood);
 
-        viewPager.setAdapter(new MoodPagerAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(new MoodPagerAdapter(MainActivity.this, getSupportFragmentManager()));
         //set default mood to happy
         viewPager.setCurrentItem(3);
 

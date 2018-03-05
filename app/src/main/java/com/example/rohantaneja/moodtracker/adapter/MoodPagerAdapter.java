@@ -1,8 +1,10 @@
 package com.example.rohantaneja.moodtracker.adapter;
 
+import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.ui.MoodFragment;
 import com.example.rohantaneja.moodtracker.util.Constants;
 
@@ -12,44 +14,20 @@ import com.example.rohantaneja.moodtracker.util.Constants;
 
 public class MoodPagerAdapter extends FragmentPagerAdapter {
 
-    public MoodPagerAdapter(FragmentManager fm) {
+    private Context context;
+
+    public MoodPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
+        this.context = (BaseActivity) context;
+
     }
 
     @Override
     public MoodFragment getItem(int position) {
-
-        int moodImageResId;
-        int moodBackgroundId;
-
-        switch (position) {
-
-            case 0:
-                moodImageResId = Constants.MOOD_IMAGE_SAD;
-                moodBackgroundId = Constants.MOOD_COLOR_SAD;
-                break;
-
-            case 1:
-                moodImageResId = Constants.MOOD_IMAGE_DISAPPOINTED;
-                moodBackgroundId = Constants.MOOD_COLOR_DISAPPOINTED;
-                break;
-
-            case 2:
-                moodImageResId = Constants.MOOD_IMAGE_NORMAL;
-                moodBackgroundId = Constants.MOOD_COLOR_NORMAL;
-                break;
-
-            case 3:
-                moodImageResId = Constants.MOOD_IMAGE_HAPPY;
-                moodBackgroundId = Constants.MOOD_COLOR_HAPPY;
-                break;
-
-            default:
-                moodImageResId = Constants.MOOD_IMAGE_SUPER_HAPPY;
-                moodBackgroundId = Constants.MOOD_COLOR_SUPER_HAPPY;
-        }
-
-        return MoodFragment.newInstance(moodImageResId, moodBackgroundId);
+        return MoodFragment.newInstance(
+                ((BaseActivity) context).getMoodResIdFromViewpagerPosition(position),
+                ((BaseActivity) context).getMoodColorIdFromMoodId(position)
+        );
     }
 
     @Override
