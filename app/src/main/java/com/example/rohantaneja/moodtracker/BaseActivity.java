@@ -85,7 +85,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public String getMoodNameFromMoodId(int moodId) {
-        switch (moodId){
+        switch (moodId) {
             case Constants.MOOD_ID_SAD:
                 return Constants.MOOD_SAD;
             case Constants.MOOD_ID_DISAPPOINTED:
@@ -102,7 +102,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public int getMoodResIdFromMoodId(int moodId) {
-        switch (moodId){
+        switch (moodId) {
             case Constants.MOOD_ID_SAD:
                 return Constants.MOOD_IMAGE_SAD;
             case Constants.MOOD_ID_DISAPPOINTED:
@@ -115,6 +115,23 @@ public class BaseActivity extends AppCompatActivity {
             //return "Normal" by default
             default:
                 return Constants.MOOD_IMAGE_NORMAL;
+        }
+    }
+
+    public int getMoodColorIdFromMoodId(int moodId) {
+        switch (moodId) {
+            case Constants.MOOD_ID_SAD:
+                return Constants.MOOD_COLOR_SAD;
+            case Constants.MOOD_ID_DISAPPOINTED:
+                return Constants.MOOD_COLOR_DISAPPOINTED;
+            case Constants.MOOD_ID_HAPPY:
+                return Constants.MOOD_COLOR_HAPPY;
+            case Constants.MOOD_ID_SUPER_HAPPY:
+                return Constants.MOOD_COLOR_SUPER_HAPPY;
+
+            //return "Normal" by default
+            default:
+                return Constants.MOOD_COLOR_NORMAL;
         }
     }
 }
