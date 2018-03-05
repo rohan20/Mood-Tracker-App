@@ -60,7 +60,9 @@ public class BaseActivity extends AppCompatActivity {
                         getString(R.string.score_90)
                 ));
 
-        return moodsList;
+        //return moodsList;
+        //just for testing empty state
+        return new ArrayList<>();
     }
 
     public String getMoodNameFromMoodId(int moodId) {

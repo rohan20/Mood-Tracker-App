@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewTreeObserver;
 
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.adapter.MoodHistoryAdapter;
+
+import java.util.ArrayList;
 
 public class MoodHistoryActivity extends BaseActivity {
 
@@ -28,6 +31,11 @@ public class MoodHistoryActivity extends BaseActivity {
         parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
+
+                if (getMoodsList().size() == 0) {
+                    moodsRecyclerView.setVisibility(View.GONE);
+                }
+
                 MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(MoodHistoryActivity.this);
                 moodsRecyclerView.setAdapter(moodHistoryAdapter);
                 moodHistoryAdapter.updateMoodsList(getMoodsList());
