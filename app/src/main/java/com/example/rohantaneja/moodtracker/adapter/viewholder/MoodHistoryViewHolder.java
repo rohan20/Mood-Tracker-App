@@ -24,16 +24,15 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
     private ImageButton moodMessageImageButton;
     private Context context;
 
-    public MoodHistoryViewHolder(View itemView) {
+    public MoodHistoryViewHolder(View itemView, Context context) {
         super(itemView);
+        this.context = context;
         moodBackgroundView = itemView.findViewById(R.id.mood_background_view);
         moodDayTextView = itemView.findViewById(R.id.day_text_view);
         moodMessageImageButton = itemView.findViewById(R.id.message_image_button);
     }
 
-    public void bindData(Context context, int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
-        this.context = context;
-
+    public void bindData(int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
         double moodWidthMultiplier = 0;
 
         // TODO: 04/03/18 Move this switch statement to the place where the mood is set for a day (in the Activity)
