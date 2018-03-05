@@ -34,34 +34,9 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindData(int moodItemPosition, final Mood mood, double parentHeight, double parentWidth) {
-        double moodWidthMultiplier = 0;
 
-        // TODO: 04/03/18 Move this switch statement to the place where the mood is set for a day (in the Activity)
-
-        switch (mood.getMoodId()) {
-            case Constants.MOOD_ID_SAD:
-                moodWidthMultiplier = Constants.MOOD_SAD_MULTIPLIER;
-                break;
-
-            case Constants.MOOD_ID_DISAPPOINTED:
-                moodWidthMultiplier = Constants.MOOD_DISAPPOINTED_MULTIPLIER;
-                break;
-
-            case Constants.MOOD_ID_NORMAL:
-                moodWidthMultiplier = Constants.MOOD_NORMAL_MULTIPLIER;
-                break;
-
-            case Constants.MOOD_ID_HAPPY:
-                moodWidthMultiplier = Constants.MOOD_HAPPY_MULTIPLIER;
-                break;
-
-            case Constants.MOOD_ID_SUPER_HAPPY:
-                moodWidthMultiplier = Constants.MOOD_SUPER_HAPPY_MULTIPLIER;
-                break;
-        }
-
-
-        moodBackgroundView.setBackgroundResource(((BaseActivity)context).getMoodColorIdFromMoodId(mood.getMoodId()));
+        double moodWidthMultiplier = (((BaseActivity) context).getMoodWidthMultiplierFromMoodId(mood.getMoodId()));
+        moodBackgroundView.setBackgroundResource(((BaseActivity) context).getMoodColorIdFromMoodId(mood.getMoodId()));
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
         String moodDayText = "";
@@ -105,7 +80,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
             moodMessageImageButton.setVisibility(View.GONE);
         } else {
 
-            final String snackbarMoodText = ((BaseActivity)context).getMoodNameFromMoodId(mood.getMoodId()) + ": " + mood.getMoodMessage();
+            final String snackbarMoodText = ((BaseActivity) context).getMoodNameFromMoodId(mood.getMoodId()) + ": " + mood.getMoodMessage();
 
             moodMessageImageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
