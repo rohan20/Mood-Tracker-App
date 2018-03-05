@@ -39,40 +39,8 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         moodBackgroundView.setBackgroundResource(((BaseActivity) context).getMoodColorIdFromMoodId(mood.getMoodId()));
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
-        String moodDayText = "";
-
         //set mood date
-        switch (moodItemPosition) {
-            case 0:
-                moodDayText = context.getString(R.string.days_ago_today);
-                break;
-
-            case 1:
-                moodDayText = context.getString(R.string.days_ago_one);
-                break;
-
-            case 2:
-                moodDayText = context.getString(R.string.days_ago_two);
-                break;
-
-            case 3:
-                moodDayText = context.getString(R.string.days_ago_three);
-                break;
-
-            case 4:
-                moodDayText = context.getString(R.string.days_ago_four);
-                break;
-
-            case 5:
-                moodDayText = context.getString(R.string.days_ago_five);
-                break;
-
-            case 6:
-                moodDayText = context.getString(R.string.days_ago_six);
-                break;
-
-        }
-
+        String moodDayText = context.getString(((BaseActivity) context).getMoodDayTextIdFromMoodId(mood.getMoodId()));
         moodDayTextView.setText(moodDayText);
 
         //set mood message
