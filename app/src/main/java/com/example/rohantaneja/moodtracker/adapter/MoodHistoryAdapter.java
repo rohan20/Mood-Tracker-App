@@ -12,6 +12,7 @@ import com.example.rohantaneja.moodtracker.adapter.viewholder.MoodHistoryViewHol
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.ui.MoodHistoryActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,9 +26,12 @@ public class MoodHistoryAdapter extends RecyclerView.Adapter<MoodHistoryViewHold
     private double parentWidth;
     private double parentHeight;
 
-    public MoodHistoryAdapter(List<Mood> moodsList, Context context) {
-        this.moodsList = moodsList;
+    public MoodHistoryAdapter(Context context) {
         this.context = context;
+    }
+
+    public void updateMoodsList(ArrayList<Mood> moodsList) {
+        this.moodsList = moodsList;
     }
 
     public void setParentDimensions(double parentWidth, double parentHeight) {

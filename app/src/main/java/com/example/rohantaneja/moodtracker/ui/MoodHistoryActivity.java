@@ -27,8 +27,9 @@ public class MoodHistoryActivity extends BaseActivity {
         parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(getMoodsList(), MoodHistoryActivity.this);
+                MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(MoodHistoryActivity.this);
                 moodsRecyclerView.setAdapter(moodHistoryAdapter);
+                moodHistoryAdapter.updateMoodsList(getMoodsList());
                 moodHistoryAdapter.setParentDimensions(parentLayout.getMeasuredWidth(), parentLayout.getMeasuredHeight());
                 parentLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
