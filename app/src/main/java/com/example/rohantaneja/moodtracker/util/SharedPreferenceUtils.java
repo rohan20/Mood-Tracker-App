@@ -88,4 +88,44 @@ public class SharedPreferenceUtils {
         mSharedPreferencesEditor.commit();
     }
 
+    /**
+     * Retrieves String value from preference
+     *
+     * @param key          key of preference
+     * @param defaultValue default value if no key found
+     */
+    public String getStringValue(String key, String defaultValue) {
+        return mSharedPreferences.getString(key, defaultValue);
+    }
+
+    /**
+     * Retrieves int value from preference
+     *
+     * @param key          key of preference
+     * @param defaultValue default value if no key found
+     */
+    public int getIntValue(String key, int defaultValue) {
+        return mSharedPreferences.getInt(key, defaultValue);
+    }
+
+    /**
+     * Retrieves long value from preference
+     *
+     * @param key          key of preference
+     * @param defaultValue default value if no key found
+     */
+    public long getLongValue(String key, long defaultValue) {
+        return mSharedPreferences.getLong(key, defaultValue);
+    }
+
+    /**
+     * Retrieves boolean value from preference
+     *
+     * @param keyFlag      key of preference
+     * @param defaultValue default value if no key found
+     */
+    public boolean getBoolanValue(String keyFlag, boolean defaultValue) {
+        return mSharedPreferences.getBoolean(keyFlag, defaultValue);
+    }
+
 }
