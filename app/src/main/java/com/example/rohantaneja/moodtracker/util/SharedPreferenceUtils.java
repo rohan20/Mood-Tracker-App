@@ -34,5 +34,58 @@ public class SharedPreferenceUtils {
         return mSharedPreferenceUtils;
     }
 
+    /**
+     * Stores String value in preference
+     *
+     * @param key   key of preference
+     * @param value value for that key
+     */
+    public void setValue(String key, String value) {
+        mSharedPreferencesEditor.putString(key, value);
+        mSharedPreferencesEditor.commit();
+    }
+
+    /**
+     * Stores int value in preference
+     *
+     * @param key   key of preference
+     * @param value value for that key
+     */
+    public void setValue(String key, int value) {
+        mSharedPreferencesEditor.putInt(key, value);
+        mSharedPreferencesEditor.commit();
+    }
+
+    /**
+     * Stores Double value in String format in preference
+     *
+     * @param key   key of preference
+     * @param value value for that key
+     */
+    public void setValue(String key, double value) {
+        setValue(key, Double.toString(value));
+    }
+
+    /**
+     * Stores long value in preference
+     *
+     * @param key   key of preference
+     * @param value value for that key
+     */
+    public void setValue(String key, long value) {
+        mSharedPreferencesEditor.putLong(key, value);
+        mSharedPreferencesEditor.commit();
+    }
+
+    /**
+     * Stores boolean value in preference
+     *
+     * @param key   key of preference
+     * @param value value for that key
+     */
+    public void setValue(String key, boolean value) {
+        mSharedPreferencesEditor.putBoolean(key, value);
+        mSharedPreferencesEditor.commit();
+    }
 
 }
