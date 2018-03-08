@@ -128,4 +128,23 @@ public class SharedPreferenceUtils {
         return mSharedPreferences.getBoolean(keyFlag, defaultValue);
     }
 
+    /**
+     * Removes key from preference
+     *
+     * @param key key of preference that is to be deleted
+     */
+    public void removeKey(String key) {
+        if (mSharedPreferencesEditor != null) {
+            mSharedPreferencesEditor.remove(key);
+            mSharedPreferencesEditor.commit();
+        }
+    }
+
+    /**
+     * Clears all the preferences stored
+     */
+    public void clear() {
+        mSharedPreferencesEditor.clear().commit();
+    }
+
 }
