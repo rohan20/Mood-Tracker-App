@@ -18,18 +18,19 @@ import java.util.ArrayList;
 public class MoodHistoryActivity extends BaseActivity {
 
     private RecyclerView moodsRecyclerView;
-    private Button recordCurrentMoodButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_history);
 
-        // TODO: 06/03/18 Back button to go back to PARENT_ACTIVITY
+        if (getActionBar() != null)
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+
         // TODO: 24/02/18 Reset the messages at midnight i.e. remove "7 days ago" message and update the rest
 
         moodsRecyclerView = findViewById(R.id.rv_moods_of_the_week);
-        recordCurrentMoodButton = findViewById(R.id.record_current_mood_button);
+        Button recordCurrentMoodButton = findViewById(R.id.record_current_mood_button);
         final ConstraintLayout parentLayout = findViewById(R.id.parent_layout);
 
         parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
