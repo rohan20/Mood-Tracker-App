@@ -19,5 +19,5 @@
     <string name="days_ago_five">Five days ago</string>
     <string name="days_ago_six">Six days ago</string>
     <string name="empty_state_button_text">Record current mood</string>
-    <string name="empty_state_message">We hope you\'re having a good day! Press the button below to record your current mood.</string>
+    <string name="empty_state_message">We were unable to find a mood history but we hope you\'re having a good day!</string>
 </resources>
