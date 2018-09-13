@@ -167,8 +167,8 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public int getMoodDayTextIdFromMoodId(int moodId) {
-        switch (moodId) {
+    public int getDayTextIdFromIndex(int index) {
+        switch (index) {
             case 1:
                 return R.string.days_ago_one;
             case 2:

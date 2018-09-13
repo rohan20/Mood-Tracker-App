@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.R;
@@ -33,7 +32,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         moodMessageImageButton = itemView.findViewById(R.id.message_image_button);
     }
 
-    public void bindData(Mood mood, double parentHeight, double parentWidth) {
+    public void bindData(int position, Mood mood, double parentHeight, double parentWidth) {
 
         int moodId = mood.getMoodId();
 
@@ -42,8 +41,8 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         moodBackgroundView.setLayoutParams(new ConstraintLayout.LayoutParams((int) (parentWidth * moodWidthMultiplier), (int) parentHeight / Constants.NUMBER_OF_DAYS));
 
         //set mood date
-        String moodDayText = context.getString(((BaseActivity) context).getMoodDayTextIdFromMoodId(moodId));
-        moodDayTextView.setText(moodDayText);
+        String dayText = context.getString(((BaseActivity) context).getDayTextIdFromIndex(position));
+        moodDayTextView.setText(dayText);
 
         //set mood message
         if (mood.getMoodMessage().isEmpty()) {
