@@ -1,10 +1,15 @@
 package com.example.rohantaneja.moodtracker.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.adapter.MoodPagerAdapter;
@@ -57,7 +62,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void addMoodMessage() {
         // TODO: 24/02/18 Implement this method and save the message in SharedPrefs or use an ORM
         // TODO: 04/03/18 Add default mood message for no mood selected for today
-        showToast(getString(R.string.add_mood_message));
         //create alert for adding message
         showAlertToAddMessage();
     }
@@ -69,6 +73,31 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         //negative button = Cancel
         //if empty mood message, proceed with empty message
 
+        EditText inputEditText = new EditText(MainActivity.this);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        inputEditText.setHint("Enter mood message");
+        //add margins to EditText
+        inputEditText.setLayoutParams(layoutParams);
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Mood selected: " + getMoodNameFromMoodId(viewPager.getCurrentItem()))
+                .setView(inputEditText)
+                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Added", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .create()
+                .show();
     }
 
     @Override
