@@ -11,6 +11,8 @@ public class Constants {
     public static final int NUMBER_OF_MOODS = 5;
     public static final int NUMBER_OF_DAYS = 7;
 
+    // TODO: 17/09/18 Convert the following static constants to interfaces
+
     public static final int MOOD_IMAGE_SAD = R.drawable.smiley_sad;
     public static final int MOOD_IMAGE_DISAPPOINTED = R.drawable.smiley_disappointed;
     public static final int MOOD_IMAGE_NORMAL = R.drawable.smiley_normal;
@@ -41,5 +43,29 @@ public class Constants {
     public static final double MOOD_NORMAL_MULTIPLIER = 0.6;
     public static final double MOOD_HAPPY_MULTIPLIER = 0.8;
     public static final double MOOD_SUPER_HAPPY_MULTIPLIER = 1;
+
+    //SharedPref keys for mood messages
+    public interface PREFS_MOOD_MESSAGE {
+        String KEY_DAY_0 = "MOOD_MESSAGE_TODAY";
+        String KEY_DAY_1 = "MOOD_MESSAGE_YESTERDAY";
+        String KEY_DAY_2 = "MOOD_MESSAGE_TWO_DAYS_AGO";
+        String KEY_DAY_3 = "MOOD_MESSAGE_THREE_DAYS_AGO";
+        String KEY_DAY_4 = "MOOD_MESSAGE_FOUR_DAYS_AGO";
+        String KEY_DAY_5 = "MOOD_MESSAGE_FIVE_DAYS_AGO";
+        String KEY_DAY_6 = "MOOD_MESSAGE_SIX_DAYS_AGO";
+        String KEY_DAY_7 = "MOOD_MESSAGE_ONE_WEEK_AGO";
+    }
+
+    //SharedPref keys for mood ids
+    public interface PREFS_MOOD_ID {
+        String KEY_DAY_0 = "MOOD_ID_TODAY";
+        String KEY_DAY_1 = "MOOD_ID_YESTERDAY";
+        String KEY_DAY_2 = "MOOD_ID_TWO_DAYS_AGO";
+        String KEY_DAY_3 = "MOOD_ID_THREE_DAYS_AGO";
+        String KEY_DAY_4 = "MOOD_ID_FOUR_DAYS_AGO";
+        String KEY_DAY_5 = "MOOD_ID_FIVE_DAYS_AGO";
+        String KEY_DAY_6 = "MOOD_ID_SIX_DAYS_AGO";
+        String KEY_DAY_7 = "MOOD_ID_ONE_WEEK_AGO";
+    }
 
 }
