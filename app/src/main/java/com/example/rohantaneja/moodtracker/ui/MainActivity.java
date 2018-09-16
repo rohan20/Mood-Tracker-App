@@ -68,22 +68,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private void showAlertToAddMessage() {
 
-        //create custom layout with editText for mood message
-        //positive button = Set Mood
-        //negative button = Cancel
-        //if empty mood message, proceed with empty message
+        // TODO: 16/09/18 Replace dialog button Toasts with suitable actions
 
-        EditText inputEditText = new EditText(MainActivity.this);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT);
-        inputEditText.setHint("Enter mood message");
-        //add margins to EditText
-        inputEditText.setLayoutParams(layoutParams);
+        LinearLayout inputLinearLayout = createInputEditText();
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Mood selected: " + getMoodNameFromMoodId(viewPager.getCurrentItem()))
-                .setView(inputEditText)
+                .setView(inputLinearLayout)
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -98,6 +89,29 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 })
                 .create()
                 .show();
+    }
+
+    /*
+    Create input edit text and container linear layout for margins
+     */
+    private LinearLayout createInputEditText() {
+        EditText inputEditText = new EditText(MainActivity.this);
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+
+        layoutParams.topMargin = 16;
+        layoutParams.leftMargin = 48;
+        layoutParams.rightMargin = 48;
+
+        inputEditText.setHint("Enter mood message");
+        inputEditText.setLayoutParams(layoutParams);
+
+        LinearLayout inputLinearLayout = new LinearLayout(this);
+        inputLinearLayout.addView(inputEditText);
+
+        return inputLinearLayout;
     }
 
     @Override
