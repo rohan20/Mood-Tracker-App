@@ -5,15 +5,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.adapter.MoodPagerAdapter;
 import com.example.rohantaneja.moodtracker.R;
+import com.example.rohantaneja.moodtracker.util.Constants;
+import com.example.rohantaneja.moodtracker.util.SharedPreferenceUtils;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -44,7 +46,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ib_mood_message:
-                addMoodMessage();
+                prepareDialogForMoodMessage();
                 break;
 
             case R.id.ib_mood_history:
@@ -59,42 +61,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         startActivity(i);
     }
 
-    private void addMoodMessage() {
-        // TODO: 24/02/18 Implement this method and save the message in SharedPrefs or use an ORM
+    private void prepareDialogForMoodMessage() {
         // TODO: 04/03/18 Add default mood message for no mood selected for today
-        //create alert for adding message
-        showAlertToAddMessage();
-    }
 
-    private void showAlertToAddMessage() {
-
-        // TODO: 16/09/18 Replace dialog button Toasts with suitable actions
-
-        LinearLayout inputLinearLayout = createInputEditText();
-
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Mood selected: " + getMoodNameFromMoodId(viewPager.getCurrentItem()))
-                .setView(inputLinearLayout)
-                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(MainActivity.this, "Added", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(MainActivity.this, "Cancelled", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .create()
-                .show();
-    }
-
-    /*
-    Create input edit text and container linear layout for margins
-     */
-    private LinearLayout createInputEditText() {
+        //Create input edit text and container linear layout for margins
         EditText inputEditText = new EditText(MainActivity.this);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -111,7 +81,27 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         LinearLayout inputLinearLayout = new LinearLayout(this);
         inputLinearLayout.addView(inputEditText);
 
-        return inputLinearLayout;
+        showDialogForMoodMessage(inputLinearLayout, inputEditText);
+    }
+
+    private void showDialogForMoodMessage(LinearLayout inputLayout, final EditText inputEditText) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Mood selected: " + getMoodNameFromMoodId(viewPager.getCurrentItem()))
+                .setView(inputLayout)
+                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        saveMoodMessage(inputEditText.getText().toString());
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
+    }
+
+    private void saveMoodMessage(String moodMessage) {
+        SharedPreferenceUtils sharedPrefsUtil = SharedPreferenceUtils.getInstance(this);
+        sharedPrefsUtil.setValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_0, moodMessage);
     }
 
     @Override
