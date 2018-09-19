@@ -13,6 +13,12 @@ import android.widget.TextView;
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.adapter.MoodHistoryAdapter;
+import com.example.rohantaneja.moodtracker.model.Mood;
+import com.example.rohantaneja.moodtracker.util.Constants;
+import com.example.rohantaneja.moodtracker.util.SharedPreferenceUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MoodHistoryActivity extends BaseActivity implements View.OnClickListener {
 
@@ -64,7 +70,7 @@ public class MoodHistoryActivity extends BaseActivity implements View.OnClickLis
 
             MoodHistoryAdapter moodHistoryAdapter = new MoodHistoryAdapter(MoodHistoryActivity.this);
             moodsRecyclerView.setAdapter(moodHistoryAdapter);
-            moodHistoryAdapter.updateMoodsList(getMoodsList());
+            moodHistoryAdapter.updateMoodsList(getMoodsFromSharedPreferences());
             moodHistoryAdapter.setParentDimensions(parentLayout.getMeasuredWidth(), parentLayout.getMeasuredHeight());
             parentLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
         }
@@ -78,4 +84,17 @@ public class MoodHistoryActivity extends BaseActivity implements View.OnClickLis
                 break;
         }
     }
+
+    private ArrayList<Mood> getMoodsFromSharedPreferences() {
+        ArrayList<Mood> moodsList = new ArrayList<>();
+
+        SharedPreferenceUtils sharedPrefsUtil = SharedPreferenceUtils.getInstance(this);
+        String moodMessage = sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_0, null);
+        int moodId = sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_0, 0);
+
+        moodsList.add(new Mood(moodId, moodMessage));
+
+        return moodsList;
+    }
+
 }

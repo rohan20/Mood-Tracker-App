@@ -102,6 +102,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void saveMoodMessage(String moodMessage) {
         SharedPreferenceUtils sharedPrefsUtil = SharedPreferenceUtils.getInstance(this);
         sharedPrefsUtil.setValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_0, moodMessage);
+        sharedPrefsUtil.setValue(Constants.PREFS_MOOD_ID.KEY_DAY_0, viewPager.getCurrentItem());
     }
 
     @Override
