@@ -45,7 +45,7 @@ public class MoodHistoryViewHolder extends RecyclerView.ViewHolder {
         moodDayTextView.setText(dayText);
 
         //set mood message
-        if (mood.getMoodMessage().isEmpty()) {
+        if (mood.getMoodMessage() == null) {
             moodMessageImageButton.setVisibility(View.GONE);
         } else {
 

@@ -1,8 +1,5 @@
 package com.example.rohantaneja.moodtracker.ui;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
@@ -16,13 +13,11 @@ import android.widget.TextView;
 import com.example.rohantaneja.moodtracker.BaseActivity;
 import com.example.rohantaneja.moodtracker.R;
 import com.example.rohantaneja.moodtracker.adapter.MoodHistoryAdapter;
-import com.example.rohantaneja.moodtracker.adapter.receiver.AlarmReceiver;
 import com.example.rohantaneja.moodtracker.model.Mood;
 import com.example.rohantaneja.moodtracker.util.Constants;
 import com.example.rohantaneja.moodtracker.util.SharedPreferenceUtils;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class MoodHistoryActivity extends BaseActivity implements View.OnClickListener {
 
@@ -39,7 +34,6 @@ public class MoodHistoryActivity extends BaseActivity implements View.OnClickLis
         setContentView(R.layout.activity_mood_history);
 
         initUI();
-        initMoodHistory();
     }
 
     private void initUI() {
@@ -94,30 +88,16 @@ public class MoodHistoryActivity extends BaseActivity implements View.OnClickLis
         ArrayList<Mood> moodsList = new ArrayList<>();
 
         SharedPreferenceUtils sharedPrefsUtil = SharedPreferenceUtils.getInstance(this);
-        String moodMessage = sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_0, null);
-        int moodId = sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_0, 0);
 
-        moodsList.add(new Mood(moodId, moodMessage));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_0, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_0, null)));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_1, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_1, null)));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_2, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_2, null)));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_3, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_3, null)));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_4, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_4, null)));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_5, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_5, null)));
+        moodsList.add(new Mood(sharedPrefsUtil.getIntValue(Constants.PREFS_MOOD_ID.KEY_DAY_6, 0), sharedPrefsUtil.getStringValue(Constants.PREFS_MOOD_MESSAGE.KEY_DAY_6, null)));
 
         return moodsList;
-    }
-
-    private void initMoodHistory() {
-        initAlarmManager();
-    }
-
-    private void initAlarmManager() {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
-        PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 0);
-        calendar.set(Calendar.MINUTE, 0);
-
-        if (alarmManager != null) {
-            alarmManager.setInexactRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmPendingIntent);
-        }
     }
 
 }
