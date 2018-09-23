@@ -53,7 +53,6 @@ public class Constants {
         String KEY_DAY_4 = "MOOD_MESSAGE_FOUR_DAYS_AGO";
         String KEY_DAY_5 = "MOOD_MESSAGE_FIVE_DAYS_AGO";
         String KEY_DAY_6 = "MOOD_MESSAGE_SIX_DAYS_AGO";
-        String KEY_DAY_7 = "MOOD_MESSAGE_ONE_WEEK_AGO";
     }
 
     //SharedPref keys for mood ids
@@ -65,7 +64,6 @@ public class Constants {
         String KEY_DAY_4 = "MOOD_ID_FOUR_DAYS_AGO";
         String KEY_DAY_5 = "MOOD_ID_FIVE_DAYS_AGO";
         String KEY_DAY_6 = "MOOD_ID_SIX_DAYS_AGO";
-        String KEY_DAY_7 = "MOOD_ID_ONE_WEEK_AGO";
     }
 
 }
