@@ -1,21 +1,25 @@
 package com.example.rohantaneja.moodtracker.ui;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.example.rohantaneja.moodtracker.BaseActivity;
-import com.example.rohantaneja.moodtracker.adapter.MoodPagerAdapter;
 import com.example.rohantaneja.moodtracker.R;
+import com.example.rohantaneja.moodtracker.adapter.MoodPagerAdapter;
+import com.example.rohantaneja.moodtracker.adapter.receiver.AlarmReceiver;
 import com.example.rohantaneja.moodtracker.util.Constants;
 import com.example.rohantaneja.moodtracker.util.SharedPreferenceUtils;
+
+import java.util.Calendar;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -30,6 +34,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         // TODO: 05/03/18 Show coach marks for add mood and view mood history for the first time
 
+        initUI();
+        initMoodHistory();
+    }
+
+    private void initUI() {
         ibMoodMessage = findViewById(R.id.ib_mood_message);
         ibMoodHistory = findViewById(R.id.ib_mood_history);
         viewPager = findViewById(R.id.viewpager_mood);
@@ -110,4 +119,24 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onResume();
         // TODO: 05/03/18 Show coach marks on set mood button when the user navigates back from an empty mood history screen
     }
+
+    private void initMoodHistory() {
+        initAlarmManager();
+    }
+
+    private void initAlarmManager() {
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
+        calendar.set(Calendar.MINUTE, 21);
+
+        if (alarmManager != null) {
+            alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmPendingIntent);
+        }
+    }
+
 }
