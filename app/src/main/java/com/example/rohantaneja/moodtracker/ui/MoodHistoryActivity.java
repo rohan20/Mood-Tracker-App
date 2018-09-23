@@ -40,8 +40,6 @@ public class MoodHistoryActivity extends BaseActivity implements View.OnClickLis
         if (getActionBar() != null)
             getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // TODO: 24/02/18 Reset the messages at midnight i.e. remove "7 days ago" message and update the rest
-
         parentLayout = findViewById(R.id.parent_layout);
         moodsRecyclerView = findViewById(R.id.rv_moods_of_the_week);
 

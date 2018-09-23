@@ -19,12 +19,14 @@ public class Constants {
     public static final int MOOD_IMAGE_HAPPY = R.drawable.smiley_happy;
     public static final int MOOD_IMAGE_SUPER_HAPPY = R.drawable.smiley_super_happy;
 
+    public static final int MOOD_COLOR_DEFAULT = android.R.color.transparent;
     public static final int MOOD_COLOR_SAD = R.color.faded_red;
     public static final int MOOD_COLOR_DISAPPOINTED = R.color.warm_grey;
     public static final int MOOD_COLOR_NORMAL = R.color.cornflower_blue_65;
     public static final int MOOD_COLOR_HAPPY = R.color.light_sage;
     public static final int MOOD_COLOR_SUPER_HAPPY = R.color.banana_yellow;
 
+    public static final int MOOD_ID_DEFAULT = -1;
     public static final int MOOD_ID_SAD = 0;
     public static final int MOOD_ID_DISAPPOINTED = 1;
     public static final int MOOD_ID_NORMAL = 2;
@@ -46,6 +48,7 @@ public class Constants {
 
     //SharedPref keys for mood messages
     public interface PREFS_MOOD_MESSAGE {
+        String KEY_DEFAULT = null;
         String KEY_DAY_0 = "MOOD_MESSAGE_TODAY";
         String KEY_DAY_1 = "MOOD_MESSAGE_YESTERDAY";
         String KEY_DAY_2 = "MOOD_MESSAGE_TWO_DAYS_AGO";
@@ -57,6 +60,7 @@ public class Constants {
 
     //SharedPref keys for mood ids
     public interface PREFS_MOOD_ID {
+        int KEY_DEFAULT = MOOD_ID_DEFAULT;
         String KEY_DAY_0 = "MOOD_ID_TODAY";
         String KEY_DAY_1 = "MOOD_ID_YESTERDAY";
         String KEY_DAY_2 = "MOOD_ID_TWO_DAYS_AGO";

@@ -122,6 +122,8 @@ public class BaseActivity extends AppCompatActivity {
                 return Constants.MOOD_COLOR_SAD;
             case Constants.MOOD_ID_DISAPPOINTED:
                 return Constants.MOOD_COLOR_DISAPPOINTED;
+            case Constants.MOOD_ID_NORMAL:
+                return Constants.MOOD_COLOR_NORMAL;
             case Constants.MOOD_ID_HAPPY:
                 return Constants.MOOD_COLOR_HAPPY;
             case Constants.MOOD_ID_SUPER_HAPPY:
@@ -129,7 +131,7 @@ public class BaseActivity extends AppCompatActivity {
 
             //return "Normal" by default
             default:
-                return Constants.MOOD_COLOR_NORMAL;
+                return Constants.MOOD_COLOR_DEFAULT;
         }
     }
 

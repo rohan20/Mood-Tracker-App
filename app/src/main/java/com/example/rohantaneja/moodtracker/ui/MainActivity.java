@@ -71,8 +71,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void prepareDialogForMoodMessage() {
-        // TODO: 04/03/18 Add default mood message for no mood selected for today
-
         //Create input edit text and container linear layout for margins
         EditText inputEditText = new EditText(MainActivity.this);
 
@@ -132,7 +130,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 7);
-        calendar.set(Calendar.MINUTE, 21);
+        calendar.set(Calendar.MINUTE, 58);
 
         if (alarmManager != null) {
             alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmPendingIntent);
