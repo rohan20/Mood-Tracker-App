@@ -27,6 +27,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
+
+        <receiver android:name=".adapter.receiver.AlarmReceiver" />
     </application>
 
 </manifest>
