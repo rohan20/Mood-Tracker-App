@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.rohantaneja.moodtracker.R;
+import com.example.rohantaneja.moodtracker.util.Constants;
 
 
 /**
@@ -27,10 +28,12 @@ public class MoodFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_mood, container, false);
 
-        ImageView moodImageView = v.findViewById(R.id.iv_mood);
-        moodImageView.setImageResource(getArguments().getInt("image"));
-        ConstraintLayout constraintLayout = v.findViewById(R.id.cl_parent);
-        constraintLayout.setBackgroundResource(getArguments().getInt("background"));
+        if (getArguments() != null) {
+            ImageView moodImageView = v.findViewById(R.id.iv_mood);
+            moodImageView.setImageResource(getArguments().getInt(Constants.BUNDLE_KEY.KEY_IMAGE));
+            ConstraintLayout constraintLayout = v.findViewById(R.id.cl_parent);
+            constraintLayout.setBackgroundResource(getArguments().getInt(Constants.BUNDLE_KEY.KEY_BACKGROUND));
+        }
 
         return v;
     }
@@ -38,9 +41,8 @@ public class MoodFragment extends Fragment {
     public static MoodFragment newInstance(int moodImageResId, int moodBackgroundId) {
         MoodFragment moodFragment = new MoodFragment();
         Bundle bundle = new Bundle();
-        // TODO: 24/02/18 Move these keys to Constants.java
-        bundle.putInt("image", moodImageResId);
-        bundle.putInt("background", moodBackgroundId);
+        bundle.putInt(Constants.BUNDLE_KEY.KEY_IMAGE, moodImageResId);
+        bundle.putInt(Constants.BUNDLE_KEY.KEY_BACKGROUND, moodBackgroundId);
         moodFragment.setArguments(bundle);
         return moodFragment;
     }

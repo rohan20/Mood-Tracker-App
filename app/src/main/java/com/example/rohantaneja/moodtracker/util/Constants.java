@@ -46,6 +46,11 @@ public class Constants {
     public static final double MOOD_HAPPY_MULTIPLIER = 0.8;
     public static final double MOOD_SUPER_HAPPY_MULTIPLIER = 1;
 
+    public interface BUNDLE_KEY {
+        String KEY_IMAGE = "image";
+        String KEY_BACKGROUND = "background";
+    }
+
     //SharedPref keys for mood messages
     public interface PREFS_MOOD_MESSAGE {
         String KEY_DEFAULT = null;
